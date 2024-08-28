@@ -1,9 +1,9 @@
 name: salary-action-tests
 'on': push
 jobs:
-  build: null
-  runs on: ubuntu-latest
-  steps:
-    - name: first-run
-      run: mvn compile
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first-run
+        run: mvn compile
     
