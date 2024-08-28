@@ -10,7 +10,7 @@ jobs:
       - name: updating java version
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'  # Options: 'adopt', 'zulu', 'temurin', etc.
+          distribution: 'temurin' 
           java-version: '17'
 
       - name: list files
