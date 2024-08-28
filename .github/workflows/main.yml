@@ -2,7 +2,7 @@ name: salary-action-tests
 
 'on': 
     schedule:
-      - cron: '45 12 * * *'
+      - cron: '35 12 * * *'
 
 jobs:
   build:
