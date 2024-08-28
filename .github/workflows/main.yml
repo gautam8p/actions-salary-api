@@ -1,7 +1,7 @@
 name: night-build
 'on':
    schedule:
-     - cron: 25 09 * * *
+     - cron: '35 09 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
