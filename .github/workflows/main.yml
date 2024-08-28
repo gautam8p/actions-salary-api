@@ -1,7 +1,12 @@
 name: salary-action-tests
+
 'on': 
+    push:
+      branches:
+        - main
     schedule:
-      - cron: '50 09 * * *'
+      - cron: '07 10 * * *'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -9,16 +14,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: updating java version
+      - name: Update Java version
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin' 
           java-version: '17'
 
-      - name: list files
+      - name: List files
         run: ls -lrth
 
-      - name: first-run
+      - name: First build
         run: make build
-    
-
