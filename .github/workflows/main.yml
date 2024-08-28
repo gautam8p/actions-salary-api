@@ -1,7 +1,7 @@
 name: night-build
-'on': push
-  # schedule:
-  #   - cron: 47 14 * * *
+'on':
+   schedule:
+     - cron: 25 09 * * *
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -9,19 +9,19 @@ jobs:
       - name: print date
         run: date
 
-      # - name: Checkout repository
-      #   uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      # - name: updating java version
-      #   uses: actions/setup-java@v3
-      #   with:
-      #     distribution: 'temurin' 
-      #     java-version: '17'
+      - name: updating java version
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin' 
+          java-version: '17'
 
-      # - name: list files
-      #   run: ls -lrth
+      - name: list files
+        run: ls -lrth
 
-      # - name: first-run
-      #   run: make build
+      - name: first-run
+        run: make build
     
 
