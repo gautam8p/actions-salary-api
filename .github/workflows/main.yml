@@ -2,9 +2,9 @@ name: salary-action-tests
 
 'on': 
     schedule:
-      - cron: '45 11 * * *'
+      - cron: '52 11 * * *'
 
-jobs:
+jobs:added
   build:
     runs-on: ubuntu-latest
     steps:
