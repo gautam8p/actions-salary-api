@@ -1,5 +1,7 @@
 name: salary-action-tests
-'on': push
+'on': 
+    schedule:
+      - cron: '50 09 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
