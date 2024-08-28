@@ -7,6 +7,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: updating java version
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'  # Options: 'adopt', 'zulu', 'temurin', etc.
+          java-version: '17'
+
       - name: list files
         run: ls -lrth
 
