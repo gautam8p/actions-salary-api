@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: first-run
-        run: mvn compile
+        run: mvn clean package
     
