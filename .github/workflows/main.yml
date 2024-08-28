@@ -4,6 +4,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: list files
+        run: ls -lrth
+        
       - name: first-run
         run: mvn clean package
     
