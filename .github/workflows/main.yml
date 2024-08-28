@@ -5,23 +5,26 @@ name: salary-action-tests
       branches:
         - main
     schedule:
-      - cron: "10 10 * * *"
+      - cron: "14 10 * * *"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: print date
+        run: date
 
-      - name: Update Java version
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin' 
-          java-version: '17'
+      # - name: Checkout repository
+      #   uses: actions/checkout@v3
 
-      - name: List files
-        run: ls -lrth
+      # - name: Update Java version
+      #   uses: actions/setup-java@v3
+      #   with:
+      #     distribution: 'temurin' 
+      #     java-version: '17'
 
-      - name: First build
-        run: make build
+      # - name: List files
+      #   run: ls -lrth
+
+      # - name: First build
+      #   run: make build
