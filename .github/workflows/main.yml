@@ -67,7 +67,7 @@ jobs:
           const { GITHUB_TOKEN } = process.env;
           const { owner, repo, number: pull_number } = context.issue;
 
-          const reviewBody = "Automated feedback: Please check the linter warnings.";
+          const reviewBody = "Automated feedback: Please check the date and time";
 
           await github.rest.pulls.createReview({
             owner,
