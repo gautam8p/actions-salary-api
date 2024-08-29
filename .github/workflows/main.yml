@@ -1,8 +1,9 @@
 name: salary-action-tests
 
 'on': #push
-    schedule:
-      - cron: '55 04 * * *'
+    # schedule:
+    #   - cron: '55 04 * * *'
+    workflow_call:
 
 jobs:
   build:
