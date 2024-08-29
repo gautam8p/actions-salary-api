@@ -1,16 +1,16 @@
-name: salary-action-tests
+# name: salary-action-tests
 
-'on': #push
-#     # schedule:
-#     #   - cron: '55 04 * * *'
-     workflow_call:
+# 'on': #push
+# #     # schedule:
+# #     #   - cron: '55 04 * * *'
+#      workflow_call:
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: print date
-        run: date
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: print date
+#         run: date
 # =======
 # 'on':
 #     pull_request:
@@ -43,36 +43,36 @@ jobs:
 
 
 
-# name: PR Review Workflow
+name: PR Review Workflow
 
-# 'on':
-#     pull_request:
-#       types: [opened, synchronize]
+'on':
+    pull_request:
+      types: [opened, synchronize]
 
-# jobs:
-#   review:
-#     runs-on: ubuntu-latest
+jobs:
+  review:
+    runs-on: ubuntu-latest
 
-#     steps:
-#     - name: Checkout code
-#       uses: actions/checkout@v3
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-#     - name: Run date cmd
-#       run: date
+    - name: Run date cmd
+      run: date
 
-#     - name: Leave PR Review with Feedback
-#       uses: actions/github-script@v6
-#       with:
-#         script: |
-#           const { GITHUB_TOKEN } = process.env;
-#           const { owner, repo, number: pull_number } = context.issue;
+    - name: Leave PR Review with Feedback
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const { GITHUB_TOKEN } = process.env;
+          const { owner, repo, number: pull_number } = context.issue;
 
-#           const reviewBody = "Automated feedback: Please check the date and time";
+          const reviewBody = "Automated feedback: Please check the date and time at 5:03";
 
-#           await github.rest.pulls.createReview({
-#             owner,
-#             repo,
-#             pull_number,
-#             event: "REQUEST_CHANGES", // or "COMMENT", "APPROVE"
-#             body: reviewBody,
-#           });
+          await github.rest.pulls.createReview({
+            owner,
+            repo,
+            pull_number,
+            event: "REQUEST_CHANGES", // or "COMMENT", "APPROVE"
+            body: reviewBody,
+          });
