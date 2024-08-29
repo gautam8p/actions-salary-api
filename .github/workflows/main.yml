@@ -1,9 +1,9 @@
-# name: salary-action-tests
+name: salary-action-tests
 
-# 'on': #push
+'on': #push
 #     # schedule:
 #     #   - cron: '55 04 * * *'
-#     workflow_call:
+     workflow_call:
 
 # jobs:
 #   build:
@@ -43,11 +43,11 @@
 
 
 
-name: PR Review Workflow
+# name: PR Review Workflow
 
-'on':
-    pull_request:
-      types: [opened, synchronize]
+# 'on':
+#     pull_request:
+#       types: [opened, synchronize]
 
 jobs:
   review:
