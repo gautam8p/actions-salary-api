@@ -45,9 +45,9 @@
 
 name: PR Review Workflow
 
-on:
-  pull_request:
-    types: [opened, synchronize]
+'on':
+    pull_request:
+      types: [opened, synchronize]
 
 jobs:
   review:
