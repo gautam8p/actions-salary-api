@@ -1,17 +1,17 @@
 # name: salary-action-tests
 
-'on': #push
-    # schedule:
-    #   - cron: '55 04 * * *'
-    workflow_call:
+# 'on': #push
+#     # schedule:
+#     #   - cron: '55 04 * * *'
+#     workflow_call:
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: print date
-        run: date
-=======
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: print date
+#         run: date
+# =======
 # 'on':
 #     pull_request:
 #       types: [opened]
