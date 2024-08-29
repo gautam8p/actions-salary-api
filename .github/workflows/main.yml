@@ -1,4 +1,4 @@
-name: salary-action-tests
+# name: salary-action-tests
 
 'on': #push
     # schedule:
@@ -11,6 +11,17 @@ jobs:
     steps:
       - name: print date
         run: date
+=======
+# 'on':
+#     pull_request:
+#       types: [opened]
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: print date
+#         run: date
+
 
       # - name: Checkout repository
       #   uses: actions/checkout@v3
@@ -29,3 +40,39 @@ jobs:
 
       # - name: build
       #   run: mvn clean package
+
+
+
+name: PR Review Workflow
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: print date
+      run: date
+
+    - name: Leave PR Review with Feedback
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const { GITHUB_TOKEN } = process.env;
+          const { owner, repo, number: pull_number } = context.issue;
+
+          const reviewBody = "Automated feedback: Please check the current date and time";
+
+          await github.pulls.createReview({
+            owner,
+            repo,
+            pull_number,
+            event: "REQUEST_CHANGES", # or "COMMENT", "APPROVE"
+            body: reviewBody,
+          });
