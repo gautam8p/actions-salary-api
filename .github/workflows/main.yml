@@ -1,8 +1,8 @@
 name: salary-action-tests
 
-'on': 
-    schedule:
-      - cron: '25 3 * * *'
+'on': push
+    # schedule:
+    #   - cron: '25 3 * * *'
 
 jobs:
   build:
@@ -23,5 +23,5 @@ jobs:
       # - name: List files
       #   run: ls -lrth
 
-      # - name: First build
-      #   run: make build
+      - name: First build
+        run: make build
