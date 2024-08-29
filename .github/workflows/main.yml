@@ -11,20 +11,20 @@ jobs:
       - name: print date
         run: date
 
-      # - name: Checkout repository
-      #   uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      # - name: Update Java version
-      #   uses: actions/setup-java@v3
-      #   with:
-      #     distribution: 'temurin' 
-      #     java-version: '17'
+      - name: Update Java version
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin' 
+          java-version: '17'
 
       # - name: List files
       #   run: ls -lrth
 
-      # - name: First build
-      #   run: make build
+      - name: First build
+        run: make build
 
-      - name: build
-        run: mvn clean package
+      # - name: build
+      #   run: mvn clean package
