@@ -57,7 +57,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: print date
+    - name: Run date cmd
       run: date
 
     - name: Leave PR Review with Feedback
@@ -67,12 +67,12 @@ jobs:
           const { GITHUB_TOKEN } = process.env;
           const { owner, repo, number: pull_number } = context.issue;
 
-          const reviewBody = "Automated feedback: Please check the current date and time";
+          const reviewBody = "Automated feedback: Please check the linter warnings.";
 
-          await github.pulls.createReview({
+          await github.rest.pulls.createReview({
             owner,
             repo,
             pull_number,
-            event: "REQUEST_CHANGES", # or "COMMENT", "APPROVE"
+            event: "REQUEST_CHANGES", // or "COMMENT", "APPROVE"
             body: reviewBody,
           });
