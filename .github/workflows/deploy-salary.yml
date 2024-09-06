@@ -15,6 +15,6 @@ jobs:
             distribution: 'temurin' 
             java-version: '17'
 
-        - name: First builds
+        - name: First build
           run: make build
 
