@@ -45,7 +45,7 @@ jobs:
         - name: mvn-test
           run: mvn test
 
-        - name: migration
+        - name: migrations
           run: make run-migrations
 
         - name: application access
