@@ -16,5 +16,5 @@ jobs:
             java-version: '17'
 
         - name: First build
-          run: make build
+          run: make docker-build
 
