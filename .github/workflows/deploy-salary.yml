@@ -9,8 +9,8 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v3
 
-        - name: maven version-check
-          run: mvn -version
+        # - name: maven version-check
+          # run: mvn -version
 
         - name: Update Java version
           uses: actions/setup-java@v3
@@ -33,10 +33,15 @@ jobs:
             make docker-build
             make docker-push
 
-        - name: testing
-          run: |
-            make fmt
-            make test
-            mvn checkstyle:checkstyle
-            # mvn test
+        - name: make-fmt
+          run: make fmt
+
+        - name: make-test
+          run: make test
+            
+        - name: mvn-check-style
+          run: mvn checkstyle:checkstyle
+
+        - name: mvn-test
+          run: mvn test
 
