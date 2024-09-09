@@ -1,6 +1,9 @@
 # APP_VERSION ?= v0.1.0
 # IMAGE_REGISTRY ?= quay.io/opstree
 # IMAGE_NAME ?= salary-api
+APP_VERSION ?= 1.0
+IMAGE_REGISTRY ?= us-central1-docker.pkg.dev/gowtham-demo-433405/salary-reg
+IMAGE_NAME ?= salary-ms
 
 # Build salary api
 build:
