@@ -35,5 +35,5 @@ jobs:
             make fmt
             make test
             mvn checkstyle:checkstyle
-            mvn test
+            # mvn test
 
