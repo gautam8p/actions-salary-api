@@ -4,7 +4,7 @@ name: salry-microservice
 
 jobs:
     build:
-        runs-on: self-hosted
+        runs-on: self-hosted-server
         steps:
         - name: Checkout code
           uses: actions/checkout@v3
