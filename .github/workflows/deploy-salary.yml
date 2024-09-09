@@ -28,7 +28,7 @@ jobs:
         - name: build-stage
           run: make build
           
-        - name: First build
+        - name: First builds
           env:
             GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
           run: |
