@@ -30,3 +30,10 @@ jobs:
             make docker-build
             make docker-push
 
+        - name: testing
+          run: |
+            make fmt
+            make test
+            mvn checkstyle:checkstyle
+            mvn test
+
