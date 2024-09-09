@@ -9,6 +9,9 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v3
 
+        - name: maven version-check
+          run: mvn -version
+
         - name: Update Java version
           uses: actions/setup-java@v3
           with:
