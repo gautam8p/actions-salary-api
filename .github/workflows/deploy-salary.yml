@@ -48,7 +48,7 @@ jobs:
         - name: migration
           run: make run-migrations
 
-        - name: app access
+        - name: application access
           run: java -jar target/salary-0.1.0-RELEASE.jar
 
 
